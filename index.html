@@ -87,6 +87,33 @@
   .fimg{max-width:100%;border:1px solid var(--line);border-radius:8px}
   footer{text-align:center;color:var(--muted);font-size:.85rem;padding:26px 16px 50px}
   svg text{font-family:"Segoe UI","Arial Hebrew",Arial,sans-serif}
+  /* step drill-down */
+  details.substep{margin:7px 0;border-inline-start:2px dashed #90caf9;padding-inline-start:10px}
+  details.substep>summary{cursor:pointer;font-size:.82rem;font-weight:700;color:#1565c0;list-style:none;padding:3px 0}
+  details.substep>summary::-webkit-details-marker{display:none}
+  details.substep>summary::before{content:"▸ הסבר מההתחלה"}
+  details.substep[open]>summary::before{content:"▾ הסבר מההתחלה"}
+  .scaf{background:#f7fbff;border:1px solid #cfe3f7;border-radius:8px;padding:9px 13px;margin:5px 0;font-size:.92rem;font-weight:400;line-height:1.6}
+  .scaf div{margin:5px 0}
+  .scaf .warn{color:#c0392b}
+  .scaf .lk{font-size:.83rem;margin-top:7px}
+  .scaf .lk a{margin-inline-end:12px;color:#1565c0;font-weight:600}
+  /* tooltips */
+  .term{border-bottom:1px dotted #1565c0;cursor:pointer;position:relative;color:#0d47a1;font-weight:600}
+  .term>.def{display:none;position:absolute;right:0;top:1.7em;z-index:9;background:#0d3b66;color:#fff;
+    padding:8px 11px;border-radius:8px;width:235px;font-size:.82rem;font-weight:400;line-height:1.45;
+    box-shadow:0 4px 14px rgba(0,0,0,.22);text-align:right}
+  .term.open>.def{display:block}
+  /* predict-first */
+  .predict{background:#fff7ed;border:1px solid #fdba74;border-radius:10px;padding:10px 14px;margin:10px 0}
+  .predict b{color:#9a3412}
+  .predict .opt{display:block;width:100%;text-align:right;margin:6px 0;padding:8px 12px;border:1px solid #e7c9a9;
+    background:#fff;border-radius:8px;cursor:pointer;font-size:.95rem;font-family:inherit}
+  .predict .opt:hover{background:#fff1e0}
+  .predict .opt.ok{background:#e8f5e9;border-color:#a5d6a7}
+  .predict .opt.bad{background:#fde8e8;border-color:#f3b0b0}
+  .predict .fb{margin-top:8px;font-weight:700;font-size:.92rem}
+  .predict .fb.good{color:#2e7d32} .predict .fb.bad{color:#c0392b}
 </style>
 </head>
 <body>
@@ -122,6 +149,7 @@
     <span style="color:#1565c0;font-weight:700">✅ פתרון מלא</span>.
     כל נוסחה עם <span class="formula" style="font-size:.85rem">📄</span> פותחת את <b>דף הנוסחאות</b> הרשמי.
     בכל נושא יש גם <b>סימולציה אינטראקטיבית</b> לשחק ולהבין.
+    <br>🆕 בתוך הפתרון המלא — הקישו על <b style="color:#1565c0">▸ הסבר מההתחלה</b> שליד כל שלב לקבל הסבר בסיסי לגמרי, ועל מילים <span class="term">מסומנות<span class="def">בדיוק כמו זה! הקשה על מילה מסומנת פותחת הסבר קצר.</span></span> להגדרה מהירה.
   </div>
 
   <nav>
@@ -234,19 +262,74 @@
         <div class="step"><b>ה:</b> ב' מאיצה ואז מאטה → מרווח הטיפות גדל ואז קטן.</div>
       </details>
 
+      <div class="predict">
+        <b>🤔 בדקו את עצמכם (סעיף א):</b> נתון גרף מהירות-זמן ושואלים על <b>התאוצה</b>. באיזה כלי תבחרו?
+        <button class="opt" onclick="predict(this,true)">השיפוע של הגרף</button>
+        <button class="opt" onclick="predict(this,false)">השטח מתחת לגרף</button>
+        <button class="opt" onclick="predict(this,false)">הגובה של הגרף בנקודה מסוימת</button>
+        <div class="fb"></div>
+      </div>
+
       <details class="lvl full"><summary>✅ פתרון מלא</summary>
-        <div class="step"><b>א.</b> א' (12→8 תוך 10ש'): <span class="formula">aₐ=(8−12)/10 = −0.4 m/s²</span> (כיוון שלילי, האטה).<br>
-          ב' (0→8 תוך 10ש'): <span class="formula">a_ב=(8−0)/10 = +0.8 m/s²</span>.</div>
-        <div class="step"><b>ב.</b> ב-t=10 שתי המהירויות חיוביות (8) → <b>אותו כיוון</b>.<br>
-          מרחק=שטח: א' טרפז <span class="formula">½(12+8)·10=100 m</span>; ב' משולש <span class="formula">½·10·8=40 m</span> → <b>א' גדול</b>.</div>
-        <div class="step"><b>ג.</b> א' מ-<span class="formula">v₀=12</span> עד <span class="formula">v=0</span>:
+        <p style="font-size:.85rem;color:#5b6573;margin:.2em 0 .6em">לכל שלב יש כפתור <b style="color:#1565c0">▸ הסבר מההתחלה</b> — הקישו עליו אם משהו לא ברור.</p>
+
+        <div class="step"><b>א.</b> מכונית א' (<span class="term">תאוצה<span class="def">כמה המהירות משתנה בכל שנייה. נמדדת במ'/ש² (מטר לשנייה, לכל שנייה).</span></span> מהשיפוע): 12→8 תוך 10ש' → <span class="formula">aₐ=(8−12)/10 = −0.4 m/s²</span> (האטה).
+          ב' (0→8 תוך 10ש') → <span class="formula">a_ב=(8−0)/10 = +0.8 m/s²</span>.
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> תאוצה = כמה המהירות משתנה בכל שנייה.</div>
+            <div>📈 <b>על הגרף:</b> זה ה<span class="term">שיפוע<span class="def">כמה הקו "עולה" או "יורד": שינוי בציר האנכי חלקי שינוי בציר האופקי.</span></span> של הקו — שינוי במהירות חלקי שינוי בזמן.</div>
+            <div>🔢 <b>כאן (א'):</b> המהירות יורדת מ-12 ל-8 (שינוי של −4) ב-10 שניות → 4−/10 = 0.4− מ'/ש².</div>
+            <div>➖ <b>הסימן:</b> יצא שלילי → המכונית מאטה (התאוצה הפוכה לכיוון הנסיעה).</div>
+            <div class="warn">⚠️ <b>טעות נפוצה:</b> לכתוב 0.4 בלי המינוס. הכיוון חשוב!</div>
+            <div class="lk">🎮 <a href="https://www.ophysics.com/k5a.html" target="_blank">גרף v–t אינטראקטיבי</a> · 📄 <a href="formula_sheet.pdf#page=2" target="_blank">הנוסחה בדף</a></div>
+          </div></details>
+        </div>
+
+        <div class="step"><b>ב.</b> ב-t=10 שתי המהירויות חיוביות (8) → <b>אותו כיוון</b>.
+          מרחק = שטח: א' <span class="term">טרפז<span class="def">צורה עם שני צדדים מקבילים. שטח = (סכום הצדדים המקבילים) ÷ 2, כפול הגובה.</span></span> <span class="formula">½(12+8)·10=100 m</span>; ב' משולש <span class="formula">½·10·8=40 m</span> → <b>של א' גדול</b>.
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> המרחק שגוף עובר = השטח הכלוא בין קו המהירות לציר הזמן.</div>
+            <div>🔺 <b>צורות:</b> שטח משולש = (בסיס×גובה)/2 · שטח טרפז = (סכום הבסיסים המקבילים)/2 × הגובה.</div>
+            <div>🔢 <b>כאן:</b> א' יוצרת טרפז בין 12 ל-8 → (12+8)/2×10 = 100 מ'. ב' יוצרת משולש מ-0 ל-8 → 8×10/2 = 40 מ'.</div>
+            <div>🧭 <b>כיוון:</b> מהירות חיובית בגרף = נוסעים ימינה. שתיהן חיוביות → אותו כיוון.</div>
+            <div class="warn">⚠️ <b>טעות נפוצה:</b> לבלבל בין "מהירות גבוהה" ל"מרחק גדול". המרחק הוא השטח, לא הגובה.</div>
+          </div></details>
+        </div>
+
+        <div class="step"><b>ג.</b> א' נעה ברציפות באותה תאוצה מ-<span class="formula">v₀=12</span> עד עצירה <span class="formula">v=0</span>:
           <span class="formula">Δx=(0−12²)/(2·(−0.4))=180 m</span>; <span class="formula">t=(0−12)/(−0.4)=30 s</span>.
-          <div class="ans">התחנה ב-180 מ'; א' מגיעה ב-t=30s.</div></div>
-        <div class="step"><b>ד.</b> ב' עד t=10 עברה <span class="formula">40 m</span> → נותרו <span class="formula">140 m</span>.
+          <div class="ans">התחנה ב-180 מ'; א' מגיעה ב-t=30s.</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> כשהתאוצה קבועה, יש שלוש "משוואות תנועה" שמקשרות מקום, מהירות, תאוצה וזמן.</div>
+            <div>🧰 <b>איך בוחרים:</b> מסתכלים מה נתון ומה חסר. <b>אין זמן בשאלה?</b> בחרו <span class="formula">v²=v₀²+2aΔx</span>. <b>רוצים זמן?</b> <span class="formula">v=v₀+at</span>.</div>
+            <div>💡 <b>למה v₀=12 ולא 8?</b> התאוצה לא השתנתה אחרי t=10, אז כל התנועה היא רצף אחד מ-t=0. נוח לחשב מ-12 עד 0.</div>
+            <div>🔢 מרחק: (0−12²)/(2×−0.4)=180 מ'. זמן: (0−12)/(−0.4)=30 ש'.</div>
+            <div class="warn">⚠️ <b>טעות נפוצה:</b> לשכוח את המינוס במכנה (2×−0.4) — אז יוצא מרחק שלילי.</div>
+          </div></details>
+        </div>
+
+        <div class="step"><b>ד.</b> ב' עד t=10 עברה <span class="formula">40 m</span> → נותרו <span class="formula">140 m</span>;
           <span class="formula">a=(0−8²)/(2·140)≈−0.23 m/s²</span>; <span class="formula">t=(0−8)/(−0.23)≈35 s</span> → ב' עוצרת ב-t=45s.
-          <div class="ans">הפרש: 45 − 30 = 15 שניות.</div></div>
-        <div class="step"><b>ה.</b> ב' מאיצה אז מאטה → מרווח הטיפות גדל ואז קטן.
-          <div class="ans">התשובה: איור 4.</div></div>
+          <div class="ans">הפרש: 45 − 30 = 15 שניות.</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> מחלקים את תנועת ב' לשניים — לפני t=10 (מאיצה) ואחרי (מאטה עד עצירה).</div>
+            <div>🔢 <b>חלק 1:</b> עד t=10 ב' עברה שטח משולש 10×8/2 = 40 מ'.</div>
+            <div>➖ <b>חלק 2:</b> התחנה ב-180 מ', אז נותרו 180−40 = 140 מ' שבהם היא מאטה.</div>
+            <div>🧰 <b>מציאת התאוצה:</b> יש מהירות התחלתית (8), סופית (0) ומרחק (140), אין זמן → <span class="formula">a=(0−8²)/(2·140)</span>.</div>
+            <div>⏱️ <b>הזמן:</b> t=(0−8)/(−0.23)≈35 ש'. ב' עוצרת ב-t=10+35=45. א' עצרה ב-30. הפרש = 15 ש'.</div>
+            <div class="warn">⚠️ <b>טעות נפוצה:</b> לחשב את ההאטה מהמרחק הכולל (180) במקום מהמרחק שנותר (140).</div>
+          </div></details>
+        </div>
+
+        <div class="step"><b>ה.</b> ב' מאיצה ואז מאטה → מרווח הטיפות גדל ואז קטן.
+          <div class="ans">התשובה: איור 4.</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> הטיפות נופלות בהפרשי זמן שווים. ככל שהמכונית מהירה יותר — היא עוברת יותר דרך בין טיפה לטיפה → המרווח גדול יותר.</div>
+            <div>📈 <b>התנועה של ב':</b> מאיצה (0→10 ש') ואז מאטה (10→45 ש') — המהירות עולה ואז יורדת.</div>
+            <div>🔍 <b>לכן:</b> המרווחים מתחילים קטנים, גדלים (במהירות המרבית), ואז קטנים שוב — "צפוף → דליל → צפוף". זה איור 4.</div>
+            <div class="warn">⚠️ <b>טעות נפוצה:</b> לחשוב שמרווח קבוע = מהירות קבועה. כאן המהירות משתנה כל הזמן.</div>
+          </div></details>
+        </div>
       </details>
     </div>
 
@@ -384,6 +467,23 @@
   </details>
 
 </main>
+
+<script>
+  // term tooltips — tap to toggle, tap elsewhere to close
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('.term');
+    document.querySelectorAll('.term.open').forEach(function(el){ if(el!==t) el.classList.remove('open'); });
+    if(t){ t.classList.toggle('open'); }
+  });
+  // predict-first checkpoint feedback
+  function predict(btn, ok){
+    var box = btn.closest('.predict');
+    box.querySelectorAll('.opt').forEach(function(b){ b.onclick=null; b.style.cursor='default'; });
+    var fb = box.querySelector('.fb');
+    if(ok){ btn.classList.add('ok'); fb.textContent='✓ נכון! תאוצה היא השיפוע של גרף ה-v–t.'; fb.className='fb good'; }
+    else { btn.classList.add('bad'); fb.textContent='לא בדיוק. הגרף כאן הוא מהירות-זמן, אז התאוצה = השיפוע. (השטח נותן מרחק, הגובה נותן מהירות רגעית.)'; fb.className='fb bad'; }
+  }
+</script>
 
 <footer>
   מארז תרגול במכניקה · לפי שאלוני 36361 (2021–2025) ומחווני משרד החינוך · דף נוסחאות רשמי מצורף · גרסת אב-טיפוס
