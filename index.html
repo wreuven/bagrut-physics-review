@@ -196,12 +196,6 @@
       <div class="frefnote">📄 <a href="formula_sheet.pdf#page=2" target="_blank">כל נוסחאות הקינמטיקה בדף הנוסחאות הרשמי</a></div>
     </div>
 
-    <details class="res"><summary>🎮 סימולציה — גרף מהירות-זמן</summary>
-      <ul>
-        <li><a href="https://www.ophysics.com/k5a.html" target="_blank">גרף v–t אינטראקטיבי</a> — לראות במו עיניכם ש<b>השיפוע = תאוצה</b> וש<b>השטח מתחת לקו = מרחק</b>. בדיוק המיומנות שהבחינה בודקת (אנגלית).</li>
-      </ul>
-    </details>
-
     <!-- Problem 2024-Q1 -->
     <div class="prob">
       <span class="tag">קיץ תשפ"ד 2024 · שאלה 1</span>
@@ -331,7 +325,251 @@
       </details>
     </div>
 
-    <div class="soon">עוד 3 שאלות קינמטיקה ייבנו באותו פורמט: <b>2021 ש'1</b> · <b>2022 ש'1</b> (בלימה ומרחק תגובה) · <b>2023 ש'1</b> (מישור משופע).</div>
+    <!-- Problem 2022-Q1 -->
+    <div class="prob">
+      <span class="tag">קיץ תשפ"ב 2022 · שאלה 1</span>
+      <h4>מכונית: האצה, מהירות קבועה ובלימה</h4>
+      <p>נהג יצא ממנוחה ונסע בכביש ישר. הגרף מתאר את גודל מהירותו כפונקציה של הזמן: המכונית מאיצה עד שמהירותה מתייצבת על <span class="formula">14 m/s</span>. בזמן נסיעה במהירות קבועה זו הבחין הנהג בכדור על הכביש; <b>זמן התגובה</b> שלו (עד הלחיצה על הבלם) הוא <span class="formula">0.75 s</span>, וגודל תאוצת הבלימה <span class="formula">3.5 m/s²</span>. היצרן מצהיר שאפשר להאיץ מ-0 ל-<span class="formula">100 km/h</span> ב-<span class="formula">2.6 s</span>.</p>
+
+      <div class="fig">
+        <svg width="380" height="250" viewBox="0 0 380 250" role="img" aria-label="גרף מהירות-זמן של המכונית">
+          <line x1="40" y1="20" x2="40" y2="210" stroke="#333" stroke-width="1.5"/>
+          <line x1="40" y1="210" x2="360" y2="210" stroke="#333" stroke-width="1.5"/>
+          <g font-size="11" fill="#555" text-anchor="end">
+            <line x1="37" y1="166" x2="40" y2="166" stroke="#333"/><text x="35" y="170">4</text>
+            <line x1="37" y1="122" x2="40" y2="122" stroke="#333"/><text x="35" y="126">8</text>
+            <line x1="37" y1="78"  x2="40" y2="78"  stroke="#333"/><text x="35" y="82">12</text>
+            <line x1="37" y1="56"  x2="40" y2="56"  stroke="#333"/><text x="35" y="60">14</text>
+            <line x1="37" y1="34"  x2="40" y2="34"  stroke="#333"/><text x="35" y="38">16</text>
+          </g>
+          <g font-size="11" fill="#555" text-anchor="middle">
+            <line x1="88" y1="210" x2="88" y2="213" stroke="#333"/><text x="88" y="225">2</text>
+            <line x1="136" y1="210" x2="136" y2="213" stroke="#333"/><text x="136" y="225">4</text>
+            <line x1="184" y1="210" x2="184" y2="213" stroke="#333"/><text x="184" y="225">6</text>
+            <line x1="232" y1="210" x2="232" y2="213" stroke="#333"/><text x="232" y="225">8</text>
+            <line x1="280" y1="210" x2="280" y2="213" stroke="#333"/><text x="280" y="225">10</text>
+            <line x1="328" y1="210" x2="328" y2="213" stroke="#333"/><text x="328" y="225">12</text>
+          </g>
+          <text x="8" y="16" font-size="12" fill="#333">v (m/s)</text>
+          <text x="362" y="206" font-size="12" fill="#333">t (s)</text>
+          <path d="M40,210 L184,78 Q232,56 280,56 L352,56" fill="none" stroke="#1565c0" stroke-width="2.5"/>
+          <line x1="184" y1="78" x2="184" y2="210" stroke="#bbb" stroke-width="1" stroke-dasharray="3,3"/>
+          <line x1="280" y1="56" x2="280" y2="210" stroke="#bbb" stroke-width="1" stroke-dasharray="3,3"/>
+        </svg>
+        <figcaption>גודל מהירות המכונית כפונקציה של הזמן (שורטט מחדש לפי השאלון)</figcaption>
+      </div>
+
+      <p style="font-size:.96rem">
+      <b>א.</b> קבעו את סוג התנועה בכל שלב: <span class="formula">0&lt;t&lt;6</span>, <span class="formula">6&lt;t&lt;10</span>, <span class="formula">10&lt;t&lt;13</span> (שוות מהירות / שוות תאוצה / תאוצה משתנה). נמקו. (6 נק')<br>
+      <b>ב.</b> הניחו שתאוצת היצרן קבועה. פי כמה היא גדולה מהתאוצה המרבית של הנהג בגרף? (6 נק')<br>
+      <b>ג.</b> חשבו בקירוב את המהירות הממוצעת ב-13 השניות הראשונות. (6 נק')<br>
+      <b>ד.</b> חשבו את משך הזמן מרגע הלחיצה על הבלם עד עצירה. (6 נק')<br>
+      <b>ה.</b> חשבו את המרחק הכולל מרגע שהנהג הבחין בכדור עד עצירה. (6 נק')<br>
+      <b>ו.</b> האם הקטנת המהירות ב-10 קמ"ש תקטין את מרחק הבלימה פי 2, ללא תלות במהירות? נמקו. (3⅓ נק')
+      </p>
+
+      <details class="lvl hint"><summary>💡 רמז</summary>
+        סוג תנועה לפי צורת הגרף (ישר עולה=שוות תאוצה, אופקי=שוות מהירות, עקום=תאוצה משתנה). זכרו: 100 קמ"ש = 100/3.6 מ'/ש'.
+        בסעיף ה' יש <b>שני</b> מרחקים: מרחק תגובה (מהירות קבועה) + מרחק בלימה.
+      </details>
+      <details class="lvl method"><summary>🧭 שיטה</summary>
+        <div class="step"><b>א:</b> ישר→שוות תאוצה · עקום→תאוצה משתנה · אופקי→שוות מהירות.</div>
+        <div class="step"><b>ב:</b> תאוצת הנהג = שיפוע הקטע הישר. המירו 100 קמ"ש למ'/ש', חלקו ב-2.6, וחלקו ביחס.</div>
+        <div class="step"><b>ג:</b> מהירות ממוצעת = (השטח מתחת לגרף) ÷ הזמן.</div>
+        <div class="step"><b>ד:</b> <span class="formula">v=v₀+at</span> עם v₀=14, a=−3.5, v=0.</div>
+        <div class="step"><b>ה:</b> מרחק תגובה = v·t_תגובה; מרחק בלימה = שטח/נוסחה. חברו.</div>
+        <div class="step"><b>ו:</b> מרחק בלימה <span class="formula">Δx=v₀²/2a</span> — תלוי בריבוע המהירות.</div>
+      </details>
+      <details class="lvl full"><summary>✅ פתרון מלא</summary>
+        <div class="step"><b>א.</b> <span class="formula">0&lt;t&lt;6</span>: קו ישר עולה → <b>שוות תאוצה</b>. <span class="formula">6&lt;t&lt;10</span>: עקום, השיפוע קטֵן → <b>תאוצה משתנה</b>. <span class="formula">10&lt;t&lt;13</span>: אופקי (v=14) → <b>שוות מהירות</b>.</div>
+        <div class="step"><b>ב.</b> תאוצת הנהג = שיפוע הקטע הישר: <span class="formula">a=12/6=2 m/s²</span>. היצרן: <span class="formula">100 km/h=27.77 m/s</span>, <span class="formula">a=27.77/2.6=10.68 m/s²</span>.
+          <div class="ans">היחס: 10.68 / 2 ≈ 5.3 — תאוצת היצרן גדולה פי ≈5.3.</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> קמ"ש (קילומטר לשעה) ומ'/ש' הן יחידות מהירות שונות — חייבים לעבוד באותן יחידות.</div>
+            <div>🔢 <b>ההמרה:</b> 1 ק"מ = 1000 מ', 1 שעה = 3600 ש' → מחלקים ב-3.6. לכן 100 קמ"ש = 100/3.6 ≈ 27.77 מ'/ש'.</div>
+            <div class="warn">⚠️ <b>טעות נפוצה:</b> לחשב עם 100 במקום 27.77 — התוצאה יוצאת שגויה פי 3.6.</div>
+          </div></details>
+        </div>
+        <div class="step"><b>ג.</b> המרחק = השטח מתחת לגרף ≈ 36 (משולש 0–6) + ≈53 (קטע 6–10) + 42 (מלבן 10–13) ≈ <span class="formula">131 m</span>.
+          <div class="ans">מהירות ממוצעת ≈ 131 / 13 ≈ 10.1 m/s.</div></div>
+        <div class="step"><b>ד.</b> <span class="formula">t=(0−14)/(−3.5)=4 s</span>.<div class="ans">זמן הבלימה = 4 שניות.</div></div>
+        <div class="step"><b>ה.</b> מרחק תגובה: <span class="formula">14·0.75=10.5 m</span>. מרחק בלימה: <span class="formula">14·4−½·3.5·4²=28 m</span>.
+          <div class="ans">סה"כ 10.5 + 28 = 38.5 מ'.</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> מהרגע שרואים סכנה ועד עצירה יש <b>שני</b> חלקים.</div>
+            <div>1️⃣ <b>מרחק תגובה:</b> בזמן התגובה הרגל עוד לא על הבלם → המכונית נוסעת ב<b>מהירות קבועה</b>. מרחק = v·t.</div>
+            <div>2️⃣ <b>מרחק בלימה:</b> רק עכשיו מאטים בתאוצה קבועה עד עצירה.</div>
+            <div class="warn">⚠️ <b>טעות נפוצה:</b> לשכוח את מרחק התגובה ולחשב רק את הבלימה.</div>
+          </div></details>
+        </div>
+        <div class="step"><b>ו.</b> מרחק הבלימה <span class="formula">Δx=v₀²/(2a)</span> תלוי ב<b>ריבוע</b> המהירות. הקטנה ב-10 קמ"ש מקטינה את היחס <span class="formula">(v₀−10)²/v₀²</span> — שתלוי ב-v₀ ואינו שווה ל-½.
+          <div class="ans">לא. ההקטנה תלויה במהירות ואינה "פי 2".</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> כיוון ש-<span class="formula">Δx ∝ v₀²</span>, אותה הורדה במהירות משפיעה <b>הרבה יותר</b> במהירות גבוהה מאשר בנמוכה.</div>
+            <div>📈 דוגמה: מ-50→40 קמ"ש מול מ-100→90 קמ"ש — אחוז הקיצור שונה לגמרי. אין "פי 2" קבוע.</div>
+          </div></details>
+        </div>
+      </details>
+    </div>
+
+    <!-- Problem 2021-Q1 -->
+    <div class="prob">
+      <span class="tag">קיץ תשפ"א 2021 · שאלה 1</span>
+      <h4>שתי מכוניות הנעות זו לקראת זו</h4>
+      <p>שתי מכוניות, א' ו-ב', על כביש ישר. ברגע <span class="formula">t=0</span> מכונית א' חולפת בנקודה A במהירות <span class="formula">30 m/s</span> ומתחילה להאט בקצב קבוע עד עצירה. באותו רגע מכונית ב' יוצאת ממנוחה מנקודה B ונוסעת לכיוון א' (מאיצה בקצב קבוע). הכיוון החיובי של ציר <span class="formula">x</span> הוא ימינה, ראשיתו ב-A. שתי המכוניות נעות זו לקראת זו ונעצרות באותו רגע ובאותו מקום.</p>
+
+      <div class="fig">
+        <svg width="380" height="300" viewBox="0 0 380 300" role="img" aria-label="גרף מהירות-זמן של שתי המכוניות">
+          <line x1="45" y1="20" x2="45" y2="285" stroke="#333" stroke-width="1.5"/>
+          <line x1="45" y1="150" x2="365" y2="150" stroke="#333" stroke-width="1.5"/>
+          <g font-size="11" fill="#555" text-anchor="end">
+            <line x1="42" y1="30" x2="45" y2="30" stroke="#333"/><text x="40" y="34">30</text>
+            <line x1="42" y1="70" x2="45" y2="70" stroke="#333"/><text x="40" y="74">20</text>
+            <line x1="42" y1="110" x2="45" y2="110" stroke="#333"/><text x="40" y="114">10</text>
+            <line x1="42" y1="190" x2="45" y2="190" stroke="#333"/><text x="40" y="194">-10</text>
+            <line x1="42" y1="230" x2="45" y2="230" stroke="#333"/><text x="40" y="234">-20</text>
+            <line x1="42" y1="270" x2="45" y2="270" stroke="#333"/><text x="40" y="274">-30</text>
+          </g>
+          <g font-size="11" fill="#555" text-anchor="middle">
+            <line x1="97.5" y1="150" x2="97.5" y2="153" stroke="#333"/><text x="97.5" y="165">3</text>
+            <line x1="150" y1="150" x2="150" y2="153" stroke="#333"/><text x="150" y="165">6</text>
+            <line x1="202.5" y1="150" x2="202.5" y2="153" stroke="#333"/><text x="202.5" y="165">9</text>
+            <line x1="255" y1="150" x2="255" y2="153" stroke="#333"/><text x="255" y="165">12</text>
+            <line x1="307.5" y1="150" x2="307.5" y2="153" stroke="#333"/><text x="307.5" y="165">15</text>
+          </g>
+          <text x="10" y="16" font-size="12" fill="#333">v (m/s)</text>
+          <text x="366" y="146" font-size="12" fill="#333">t (s)</text>
+          <line x1="45" y1="30" x2="307.5" y2="150" stroke="#c0392b" stroke-width="2.5"/>
+          <text x="110" y="68" font-size="14" fill="#c0392b" font-weight="700">א׳</text>
+          <polyline points="45,150 220,270 307.5,150" fill="none" stroke="#7b1fa2" stroke-width="2.5"/>
+          <text x="150" y="248" font-size="14" fill="#7b1fa2" font-weight="700">ב׳</text>
+        </svg>
+        <figcaption>גרף v–t של שתי המכוניות (מכונית א' אדום, מכונית ב' סגול)</figcaption>
+      </div>
+
+      <p style="font-size:.96rem">
+      <b>א.</b> מבין ארבעה היגדים על סימני התאוצות — איזה נכון? נמקו. (6 נק')<br>
+      <b>ב.</b> חשבו את הזמן מ-<span class="formula">t=0</span> עד שמכונית א' נעצרה. (4 נק')<br>
+      <b>ג.</b> חשבו את המרחק בין נקודת העצירה של א' לנקודה A. (5 נק')<br>
+      <b>ד.</b> מכונית ב' מאיצה <span class="formula">3 m/s²</span> במשך 10 ש', ואז מאטה ונעצרת באותו רגע ומקום כמו א'. חשבו את גודל תאוצת הבלימה של ב'. (7 נק')<br>
+      <b>ה.</b> חשבו את המרחק <span class="formula">AB</span> שהיה בין המכוניות ברגע <span class="formula">t=0</span>. (7 נק')<br>
+      <b>ו.</b> סרטטו במערכת צירים אחת את גרף ה-v–t של כל מכונית (כמו למעלה). (4⅓ נק')
+      </p>
+
+      <details class="lvl hint"><summary>💡 רמז</summary>
+        מכונית א' חיובית ויורדת; מכונית ב' נעה שמאלה (שלילית) ומגבירה מהירות. שתיהן עוצרות ב-t=15s.
+        בסעיף ה' עקבו אחרי <b>המקום</b> של ב' שלב-אחר-שלב (שטח כל קטע).
+      </details>
+      <details class="lvl method"><summary>🧭 שיטה</summary>
+        <div class="step"><b>א:</b> סימן התאוצה = סימן השיפוע. שתי המהירויות "יורדות" בגרף → שתי התאוצות שליליות.</div>
+        <div class="step"><b>ב:</b> מהגרף א' מגיעה ל-v=0; או <span class="formula">v=v₀+at</span>.</div>
+        <div class="step"><b>ג:</b> מרחק = שטח המשולש של א'.</div>
+        <div class="step"><b>ד:</b> בתום 10 ש' מהירות ב' היא 30 (מ-3·10); היא עוצרת ב-t=15 → בלימה ב-5 ש'.</div>
+        <div class="step"><b>ה:</b> שתיהן עוצרות ב-225 מ' מ-A. שחזרו אחורה את מקום ב' דרך שני הקטעים → מקום B.</div>
+      </details>
+      <details class="lvl full"><summary>✅ פתרון מלא</summary>
+        <div class="step"><b>א.</b> מכונית א': v חיובית (30) ויורדת ל-0 → <span class="formula">a&lt;0</span>. מכונית ב': נעה לכיוון א' (שמאלה, שלילי) ומגבירה מהירות → v נעשית שלילית יותר → <span class="formula">a&lt;0</span>.
+          <div class="ans">ההיגד הנכון: שתי המכוניות בתאוצה שלילית.</div></div>
+        <div class="step"><b>ב.</b> <span class="formula">a_א=−30/15=−2 m/s²</span>; <span class="formula">t=(0−30)/(−2)=15 s</span>.<div class="ans">א' נעצרת ב-t=15 שניות.</div></div>
+        <div class="step"><b>ג.</b> מרחק = שטח המשולש: <span class="formula">½·30·15=225 m</span>.<div class="ans">נקודת העצירה במרחק 225 מ' מ-A.</div></div>
+        <div class="step"><b>ד.</b> בתום 10 ש': <span class="formula">v=3·10=30 m/s</span> (בכיוון שלילי). הבלימה נמשכת מ-t=10 עד t=15 → 5 ש': <span class="formula">a=30/5=6 m/s²</span>.<div class="ans">גודל תאוצת הבלימה של ב' = 6 m/s².</div></div>
+        <div class="step"><b>ה.</b> שתי המכוניות נעצרות ב-x=225 מ'. שחזור מקום ב':
+          <span class="formula">10&lt;t&lt;15</span>: 225 = x₁ − 30·5 + ½·6·5² → x₁=300. <span class="formula">0&lt;t&lt;10</span>: 300 = x_B − ½·3·10² → x_B=450.
+          <div class="ans">AB = 450 מ'.</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> כשתנועה מורכבת מכמה שלבים עם תאוצות שונות — מחשבים <b>שלב אחרי שלב</b>, וכל שלב מתחיל מהמקום והמהירות שבהם הסתיים הקודם.</div>
+            <div>🔙 <b>שחזור אחורה:</b> כאן יודעים את הסוף (x=225 ב-t=15) ורוצים את ההתחלה. עוברים אחורה דרך כל קטע עם <span class="formula">x=x₀+v₀t+½at²</span>.</div>
+            <div class="warn">⚠️ <b>טעות נפוצה:</b> להשתמש בנוסחה אחת לכל התנועה כשהתאוצה משתנה בין הקטעים.</div>
+          </div></details>
+        </div>
+        <div class="step"><b>ו.</b> הגרף שלמעלה הוא התשובה: א' (אדום) קו ישר מ-(0,30) ל-(15,0); ב' (סגול) מ-(0,0) ל-(10,−30) ובחזרה ל-(15,0).</div>
+      </details>
+    </div>
+
+    <!-- Problem 2023-Q1 -->
+    <div class="prob">
+      <span class="tag">קיץ תשפ"ג 2023 · שאלה 1</span>
+      <h4>גוף על מישור משופע חלק — שני ניסויים</h4>
+      <p>על מישור משופע <b>חלק</b> (ללא חיכוך) שתחתיתו מסומנת ב-K עורכים שני ניסויים. <b>ניסוי 1:</b> הגוף מקבל מהירות התחלתית <span class="formula">v₁</span> כלפי <b>מעלה</b> מנקודה A. <b>ניסוי 2:</b> הגוף מקבל מהירות התחלתית <span class="formula">v₂</span> כלפי <b>מטה</b> מנקודה B (B מעל A). הגרפים א ו-ב מתארים את המהירות בכל ניסוי ב-0.5 השניות הראשונות. (בחישובים <span class="formula">g=10 m/s²</span>.)</p>
+
+      <div class="fig">
+        <svg width="220" height="135" viewBox="0 0 220 135" role="img" aria-label="מישור משופע">
+          <polygon points="20,115 205,115 205,30" fill="#eef2f7" stroke="#888"/>
+          <line x1="20" y1="115" x2="205" y2="30" stroke="#555" stroke-width="2"/>
+          <circle cx="20" cy="115" r="3.5" fill="#c0392b"/><text x="12" y="128" font-size="13" fill="#c0392b" font-weight="700">K</text>
+          <circle cx="113" cy="72" r="3.5" fill="#333"/><text x="116" y="68" font-size="13" font-weight="700">A</text>
+          <circle cx="160" cy="50" r="3.5" fill="#333"/><text x="163" y="46" font-size="13" font-weight="700">B</text>
+          <text x="40" y="108" font-size="11" fill="#555">θ=30°</text>
+        </svg>
+        <svg width="360" height="320" viewBox="0 0 360 320" role="img" aria-label="גרפי מהירות-זמן של שני הניסויים">
+          <line x1="50" y1="20" x2="50" y2="305" stroke="#333" stroke-width="1.5"/>
+          <line x1="50" y1="120" x2="340" y2="120" stroke="#333" stroke-width="1.5"/>
+          <g font-size="11" fill="#555" text-anchor="end">
+            <line x1="47" y1="60" x2="50" y2="60" stroke="#333"/><text x="45" y="64">1</text>
+            <line x1="47" y1="180" x2="50" y2="180" stroke="#333"/><text x="45" y="184">-1</text>
+            <line x1="47" y1="240" x2="50" y2="240" stroke="#333"/><text x="45" y="244">-2</text>
+            <line x1="47" y1="300" x2="50" y2="300" stroke="#333"/><text x="45" y="304">-3</text>
+          </g>
+          <g font-size="11" fill="#555" text-anchor="middle">
+            <line x1="106" y1="120" x2="106" y2="123" stroke="#333"/><text x="106" y="135">0.1</text>
+            <line x1="162" y1="120" x2="162" y2="123" stroke="#333"/><text x="162" y="135">0.2</text>
+            <line x1="218" y1="120" x2="218" y2="123" stroke="#333"/><text x="218" y="135">0.3</text>
+            <line x1="274" y1="120" x2="274" y2="123" stroke="#333"/><text x="274" y="135">0.4</text>
+            <line x1="330" y1="120" x2="330" y2="123" stroke="#333"/><text x="330" y="135">0.5</text>
+          </g>
+          <text x="12" y="16" font-size="12" fill="#333">v (m/s)</text>
+          <text x="342" y="116" font-size="12" fill="#333">t (s)</text>
+          <line x1="50" y1="60" x2="330" y2="210" stroke="#c0392b" stroke-width="2.5"/>
+          <text x="150" y="80" font-size="14" fill="#c0392b" font-weight="700">א</text>
+          <line x1="50" y1="150" x2="330" y2="300" stroke="#1565c0" stroke-width="2.5"/>
+          <text x="250" y="250" font-size="14" fill="#1565c0" font-weight="700">ב</text>
+        </svg>
+        <figcaption>שמאל: מערך הניסוי (K למטה, A ואז B מעליה). ימין: גרף א — ניסוי 1 (זריקה מעלה, אדום) · גרף ב — ניסוי 2 (זריקה מטה, כחול).</figcaption>
+      </div>
+
+      <p style="font-size:.96rem">
+      <b>א.</b> קבעו אם הכיוון החיובי נקבע מעלה או מטה המישור, ובאיזה ניסוי הגוף שינה את כיוון מהירותו. נמקו. (6 נק')<br>
+      <b>ב.</b> חשבו את המרחק בין הנקודה הגבוהה ביותר שאליה הגיע הגוף בניסוי 1 לבין K. (7 נק')<br>
+      <b>ג.</b> חשבו את המרחק <span class="formula">AK</span>. (7 נק')<br>
+      <b>ד.</b> בניסוי 2 הגוף מגיע ל-K ברגע <span class="formula">t=0.62 s</span>. חשבו את המרחק <span class="formula">AB</span>. (8 נק')<br>
+      <b>ה.</b> חוזרים על הניסויים כשיש <b>חיכוך</b>. איזה מ-4 התרשימים מתאר נכון את התנועה? נמקו. (5⅓ נק')
+      </p>
+
+      <details class="lvl hint"><summary>💡 רמז</summary>
+        שני הגרפים בעלי שיפוע <span class="formula">−5 m/s²</span> = התאוצה לאורך המישור (<span class="formula">g·sinθ</span>). מרחקים = שטחים מתחת/מעל הציר. הנקודה הגבוהה ביותר היא כש-v=0.
+      </details>
+      <details class="lvl method"><summary>🧭 שיטה</summary>
+        <div class="step"><b>א:</b> מהירות חיובית בגרף א' בהתחלה → הכיוון החיובי מעלה. v מתאפסת ומתהפכת בניסוי 1 → שינה כיוון.</div>
+        <div class="step"><b>ב:</b> שטח המשולש מתחת לציר בין הרגע ש-v=0 (t=0.2) ל-t=0.5.</div>
+        <div class="step"><b>ג:</b> AK = (ירידה מהנקודה הגבוהה ל-K) − (עלייה מ-A לנקודה הגבוהה) = הפרש שטחים.</div>
+        <div class="step"><b>ד:</b> BK = שטח הטרפז של גרף ב' עד t=0.62; ואז AB = BK − AK.</div>
+        <div class="step"><b>ה:</b> בחיכוך, בעלייה ההאטה חזקה יותר ובירידה חלשה יותר; הקו "נשבר" כש-v=0.</div>
+      </details>
+      <details class="lvl full"><summary>✅ פתרון מלא</summary>
+        <div class="step"><b>א.</b> בגרף א' המהירות מתחילה חיובית (<span class="formula">+1.0</span>) → <b>הכיוון החיובי הוא כלפי מעלה</b>. ב-<span class="formula">t=0.2 s</span> המהירות מתאפסת והופכת שלילית → בניסוי 1 הגוף <b>שינה כיוון</b> (עלה, נעצר, וירד). בניסוי 2 v שלילית כל הזמן → לא שינה כיוון.
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> על מישור משופע <b>חלק</b> הכוח היחיד לאורך המישור הוא רכיב הכובד, ולכן התאוצה <b>תמיד כלפי מטה המישור</b> וקבועה: <span class="formula">a = g·sinθ</span>.</div>
+            <div>📐 <b>כאן:</b> השיפוע בגרפים הוא 5 → <span class="formula">g·sinθ=5</span> → <span class="formula">sinθ=0.5</span> → <span class="formula">θ=30°</span>.</div>
+            <div>🔼 גם בעלייה וגם בירידה התאוצה אותה תאוצה כלפי מטה — לכן הגרף הוא קו ישר אחד שחוצה את האפס.</div>
+            <div class="warn">⚠️ <b>טעות נפוצה:</b> לחשוב שבעלייה התאוצה כלפי מעלה. לא — היא תמיד כלפי מטה במישור חלק.</div>
+          </div></details>
+        </div>
+        <div class="step"><b>ב.</b> הנקודה הגבוהה: <span class="formula">v=0</span> ב-<span class="formula">t=0.2 s</span>. מ-0.2 עד 0.5 (ירידה) המהירות 0→−1.5: שטח המשולש <span class="formula">½·1.5·0.3=0.225 m</span>.<div class="ans">המרחק מהנקודה הגבוהה ל-K = 0.225 מ'.</div></div>
+        <div class="step"><b>ג.</b> עלייה מ-A לנקודה הגבוהה (0→0.2 ש'): <span class="formula">½·1.0·0.2=0.1 m</span>. ירידה לנקודה הגבוהה→K = 0.225 מ'.
+          <div class="ans">AK = 0.225 − 0.1 = 0.125 מ' (K מתחת ל-A).</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> שטח <b>מעל</b> ציר הזמן = העתק חיובי (מעלה); שטח <b>מתחת</b> לציר = העתק שלילי (מטה).</div>
+            <div>➖ הגוף עלה 0.1 מ' מעל A ואז ירד 0.225 מ' מתחת לנקודה הגבוהה → סה"כ ירד 0.125 מ' מתחת ל-A. זה בדיוק AK.</div>
+          </div></details>
+        </div>
+        <div class="step"><b>ד.</b> בניסוי 2 ב-<span class="formula">t=0.62 s</span>: <span class="formula">v=0.5+5·0.62=3.6 m/s</span>. BK = שטח הטרפז: <span class="formula">½·(0.5+3.6)·0.62=1.271 m</span>.
+          <div class="ans">AB = BK − AK = 1.271 − 0.125 ≈ 1.146 מ'.</div></div>
+        <div class="step"><b>ה.</b> עם חיכוך: בניסוי 1 בעלייה גם הכובד וגם החיכוך כלפי מטה → האטה <b>חזקה יותר</b> מ-5; אחרי ההיפוך החיכוך מתהפך → בירידה התאוצה <b>חלשה יותר</b> מ-5 (הקו "נשבר" ומתון יותר). בניסוי 2 (ירידה כל הזמן) החיכוך מתנגד → השיפוע מתון יותר מ-5−.
+          <div class="ans">התשובה: התרשים שבו קו ניסוי 1 תלול בעלייה ומתון בירידה (תרשים ג).</div>
+          <div style="font-size:.82rem;color:#888;margin-top:4px">(נקבע לפי הנמקה פיזיקלית — סעיף זה לא נפתר במחוון שבידינו.)</div>
+        </div>
+      </details>
+    </div>
   </section>
 
   <!-- ============ דינמיקה ============ -->
@@ -373,11 +611,6 @@
       <b>שימו לב:</b> כמעט תמיד משולב עם דינמיקה (מתיחות חוט) ועם אנרגיה.
       <div class="frefnote">📄 <a href="formula_sheet.pdf#page=2" target="_blank">נוסחאות התנועה המעגלית בדף הנוסחאות</a></div>
     </div>
-    <details class="res"><summary>🎮 סימולציה — מטוטלת חרוטית</summary>
-      <ul>
-        <li><a href="https://www.ophysics.com/f4.html" target="_blank">מטוטלת חרוטית אינטראקטיבית</a> — בדיוק המערך של שאלות 2024 ו-2025 (כדור על חוט במעגל אופקי): ראו איך המתיחות והזווית משתנות עם המהירות (אנגלית).</li>
-      </ul>
-    </details>
     <table class="bank">
       <tr><th>שנה</th><th>ש'</th><th>תיאור</th></tr>
       <tr><td>2022</td><td>3</td><td>גוף על שולחן מסתובב + סלסלה תלויה — תדירות, חיכוך</td></tr>
