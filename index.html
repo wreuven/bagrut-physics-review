@@ -14,7 +14,7 @@
     --ink:#1f2733; --muted:#5b6573; --line:#dfe4ea; --bg:#f6f8fb;
   }
   *{box-sizing:border-box}
-  body{margin:0;font-family:"Segoe UI","Arial Hebrew",Arial,sans-serif;background:var(--bg);
+  body{margin:0;font-family:"Segoe UI","Arial Hebrew",Arial,"Segoe UI Emoji","Noto Color Emoji","Apple Color Emoji",sans-serif;background:var(--bg);
     color:var(--ink);line-height:1.7;font-size:18px}
   header{background:linear-gradient(135deg,#0d3b66,#1565c0);color:#fff;padding:30px 18px 26px;text-align:center}
   header h1{margin:0 0 6px;font-size:1.7rem}
@@ -86,7 +86,7 @@
   .soon{background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:8px 12px;color:#7a5c00;font-size:.92rem;margin:8px 0}
   .fimg{max-width:100%;border:1px solid var(--line);border-radius:8px}
   footer{text-align:center;color:var(--muted);font-size:.85rem;padding:26px 16px 50px}
-  svg text{font-family:"Segoe UI","Arial Hebrew",Arial,sans-serif}
+  svg text{font-family:"Segoe UI","Arial Hebrew",Arial,sans-serif;direction:ltr;unicode-bidi:isolate}
   /* step drill-down */
   details.substep{margin:7px 0;border-inline-start:2px dashed #90caf9;padding-inline-start:10px}
   details.substep>summary{cursor:pointer;font-size:.82rem;font-weight:700;color:#1565c0;list-style:none;padding:3px 0}
@@ -132,8 +132,9 @@
     <span class="key">תנועה מעגלית</span>
     <span class="key">עבודה ואנרגיה</span>
     <span class="key">מתקף ותנע</span>.
-    <br><b>מבנה:</b> 6 שאלות, עונים על <b>3 בלבד</b>, שעתיים. כל שאלה 36 נק' אך הציון מוגבל ל-100 →
-    "כרית ביטחון" של כ-8 נק'. <b>סיימו את שלוש השאלות</b> במקום להתעכב על אחת.
+    <br><b>מבנה:</b> 6 שאלות, עונים על <b>3 בלבד</b>, שעתיים. כל שאלה שווה 36 נק' (3×36 = 108),
+    אך הציון מוגבל ל-100 — כלומר יש <b>"כרית ביטחון" של כ-8 נק'</b>: אפשר לטעות מעט ועדיין להגיע ל-100.
+    לכן <b>סיימו את כל שלוש השאלות</b> במקום לשכלל אחת.
   </div>
 
   <div class="callout cut">
@@ -147,9 +148,8 @@
     <span style="color:#8a6d00;font-weight:700">💡 רמז</span> ←
     <span style="color:#2e7d32;font-weight:700">🧭 שיטה</span> ←
     <span style="color:#1565c0;font-weight:700">✅ פתרון מלא</span>.
-    כל נוסחה עם <span class="formula" style="font-size:.85rem">📄</span> פותחת את <b>דף הנוסחאות</b> הרשמי.
-    בכל נושא יש גם <b>סימולציה אינטראקטיבית</b> לשחק ולהבין.
-    <br>🆕 בתוך הפתרון המלא — הקישו על <b style="color:#1565c0">▸ הסבר מההתחלה</b> שליד כל שלב לקבל הסבר בסיסי לגמרי, ועל מילים <span class="term">מסומנות<span class="def">בדיוק כמו זה! הקשה על מילה מסומנת פותחת הסבר קצר.</span></span> להגדרה מהירה.
+    <b>הנוסחאות הצהובות</b> (כמו <a class="formula fl" href="formula_sheet.pdf#page=2" target="_blank">a = Δv ⁄ Δt</a>) ניתנות ללחיצה ופותחות את <b>דף הנוסחאות</b> הרשמי.
+    <br>בתוך הפתרון המלא — הקישו על <b style="color:#1565c0">▸ הסבר מההתחלה</b> שליד כל שלב לקבל הסבר בסיסי לגמרי, ועל מילים <span class="term">מסומנות<span class="def">בדיוק כמו זה! הקשה על מילה מסומנת פותחת הסבר קצר.</span></span> להגדרה מהירה.
   </div>
 
   <nav>
@@ -196,11 +196,9 @@
       <div class="frefnote">📄 <a href="formula_sheet.pdf#page=2" target="_blank">כל נוסחאות הקינמטיקה בדף הנוסחאות הרשמי</a></div>
     </div>
 
-    <details class="res"><summary>🎮 סימולציות אינטראקטיביות — קינמטיקה</summary>
+    <details class="res"><summary>🎮 סימולציה — גרף מהירות-זמן</summary>
       <ul>
-        <li><a href="https://www.ophysics.com/k5a.html" target="_blank">גרף מהירות-זמן (v–t) אינטראקטיבי</a> — בדיוק המיומנות של הבחינה (oPhysics, אנגלית).</li>
-        <li><a href="https://www.ophysics.com/k4b.html" target="_blank">גרפים של מקום, מהירות ותאוצה</a> — לראות איך השלושה קשורים.</li>
-        <li><a href="https://ecat.education.gov.il/phet" target="_blank">מאגר סימולציות PhET בעברית</a> (משרד החינוך).</li>
+        <li><a href="https://www.ophysics.com/k5a.html" target="_blank">גרף v–t אינטראקטיבי</a> — לראות במו עיניכם ש<b>השיפוע = תאוצה</b> וש<b>השטח מתחת לקו = מרחק</b>. בדיוק המיומנות שהבחינה בודקת (אנגלית).</li>
       </ul>
     </details>
 
@@ -231,8 +229,8 @@
             <line x1="280" y1="210" x2="280" y2="213" stroke="#333"/><text x="280" y="226">8</text>
             <line x1="340" y1="210" x2="340" y2="213" stroke="#333"/><text x="340" y="226">10</text>
           </g>
-          <text x="18" y="18" font-size="12" fill="#333">v(m/s)</text>
-          <text x="352" y="224" font-size="12" fill="#333">t(s)</text>
+          <text x="8" y="14" font-size="12" fill="#333">v (m/s)</text>
+          <text x="322" y="204" font-size="12" fill="#333">t (s)</text>
           <line x1="40" y1="45" x2="340" y2="105" stroke="#c0392b" stroke-width="2.5"/>
           <text x="150" y="62" font-size="14" fill="#c0392b" font-weight="700">א׳</text>
           <line x1="40" y1="210" x2="340" y2="105" stroke="#1565c0" stroke-width="2.5"/>
@@ -249,6 +247,14 @@
       <b>ה.</b> התקן בתחתית ב' שיחרר טיפת צבע בהפרשי זמן קבועים. איזה מהאיורים 1–4 מתאר את עקבות הטיפות? (4⅓ נק')
       </p>
 
+      <div class="predict">
+        <b>🤔 נסו לנחש לפני שמתחילים (סעיף א):</b> נתון גרף מהירות-זמן ושואלים על <b>התאוצה</b>. באיזה כלי תבחרו?
+        <button class="opt" onclick="predict(this,true)">השיפוע של הגרף</button>
+        <button class="opt" onclick="predict(this,false)">השטח מתחת לגרף</button>
+        <button class="opt" onclick="predict(this,false)">הגובה של הגרף בנקודה מסוימת</button>
+        <div class="fb"></div>
+      </div>
+
       <details class="lvl hint"><summary>💡 רמז</summary>
         תאוצה = שיפוע הגרף (שימו לב לסימן). מרחק/העתק = שטח מתחת לקו (טרפז/משולש).
         בסעיף ה': מרווח בין הטיפות ∝ מהירות רגעית.
@@ -261,14 +267,6 @@
         <div class="step"><b>ד:</b> דרך של ב' עד t=10 (שטח), חסרו מ-180מ' → הדרך שנותרה → תאוצה וזמן.</div>
         <div class="step"><b>ה:</b> ב' מאיצה ואז מאטה → מרווח הטיפות גדל ואז קטן.</div>
       </details>
-
-      <div class="predict">
-        <b>🤔 בדקו את עצמכם (סעיף א):</b> נתון גרף מהירות-זמן ושואלים על <b>התאוצה</b>. באיזה כלי תבחרו?
-        <button class="opt" onclick="predict(this,true)">השיפוע של הגרף</button>
-        <button class="opt" onclick="predict(this,false)">השטח מתחת לגרף</button>
-        <button class="opt" onclick="predict(this,false)">הגובה של הגרף בנקודה מסוימת</button>
-        <div class="fb"></div>
-      </div>
 
       <details class="lvl full"><summary>✅ פתרון מלא</summary>
         <p style="font-size:.85rem;color:#5b6573;margin:.2em 0 .6em">לכל שלב יש כפתור <b style="color:#1565c0">▸ הסבר מההתחלה</b> — הקישו עליו אם משהו לא ברור.</p>
@@ -350,13 +348,6 @@
       <b>מצבים קלאסיים:</b> מישור משופע · מעלית · מד-תאוצה במכונית · גופים קשורים בחוט/גלגלת.
       <div class="frefnote">📄 <a href="formula_sheet.pdf#page=2" target="_blank">נוסחאות הדינמיקה בדף הנוסחאות</a></div>
     </div>
-    <details class="res"><summary>🎮 סימולציות אינטראקטיביות — דינמיקה (עברית)</summary>
-      <div class="embed">
-        <iframe loading="lazy" src="https://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_iw.html" allowfullscreen title="כוחות ותנועה: יסודות"></iframe>
-        <div class="src">PhET · "כוחות ותנועה: יסודות" — כוח, חיכוך, תאוצה</div>
-      </div>
-      <ul><li>גם: <a href="https://phet.colorado.edu/sims/html/friction/latest/friction_iw.html" target="_blank">סימולציית חיכוך (PhET עברית)</a>.</li></ul>
-    </details>
     <table class="bank">
       <tr><th>שנה</th><th>ש'</th><th>תיאור</th></tr>
       <tr><td>2021</td><td>2</td><td>מערכת גלגלת A,B לתקרה — תרשימי כוחות, מתיחויות, תאוצה</td></tr>
@@ -382,10 +373,9 @@
       <b>שימו לב:</b> כמעט תמיד משולב עם דינמיקה (מתיחות חוט) ועם אנרגיה.
       <div class="frefnote">📄 <a href="formula_sheet.pdf#page=2" target="_blank">נוסחאות התנועה המעגלית בדף הנוסחאות</a></div>
     </div>
-    <details class="res"><summary>🎮 סימולציות אינטראקטיביות — תנועה מעגלית</summary>
+    <details class="res"><summary>🎮 סימולציה — מטוטלת חרוטית</summary>
       <ul>
-        <li><a href="https://www.ophysics.com/f4.html" target="_blank">מטוטלת חרוטית (Conical Pendulum)</a> — בדיוק כמו שאלות 2024/2025 (כדור על חוט במעגל אופקי).</li>
-        <li><a href="https://ecat.education.gov.il/phet" target="_blank">מאגר סימולציות PhET בעברית</a>.</li>
+        <li><a href="https://www.ophysics.com/f4.html" target="_blank">מטוטלת חרוטית אינטראקטיבית</a> — בדיוק המערך של שאלות 2024 ו-2025 (כדור על חוט במעגל אופקי): ראו איך המתיחות והזווית משתנות עם המהירות (אנגלית).</li>
       </ul>
     </details>
     <table class="bank">
@@ -457,14 +447,6 @@
     <div class="soon">פתרונות מלאים בבנייה — אחרי אישור הפורמט.</div>
   </section>
 
-  <details class="res" style="margin-top:22px"><summary>📚 עוד מקורות טובים (פתרונות וקורסים)</summary>
-    <ul>
-      <li><a href="https://ptc.weizmann.ac.il/?CategoryID=2216" target="_blank">המרכז להוראת הפיזיקה — מכון ויצמן</a>: בגרויות, פתרונות ותובנות.</li>
-      <li><a href="https://www.geva.co.il/bagrut_solution/physics/" target="_blank">פתרונות בגרות — יואל גבע</a>.</li>
-      <li><a href="https://campus.gov.il/" target="_blank">קמפוס IL</a>: קורסי הכנה חינמיים של משרד החינוך.</li>
-      <li><a href="https://ecat.education.gov.il/phet" target="_blank">מאגר PhET בעברית</a> — משרד החינוך.</li>
-    </ul>
-  </details>
 
 </main>
 
