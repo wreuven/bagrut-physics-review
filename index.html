@@ -598,15 +598,352 @@
       <b>מצבים קלאסיים:</b> מישור משופע · מעלית · מד-תאוצה במכונית · גופים קשורים בחוט/גלגלת.
       <div class="frefnote">📄 <a href="formula_sheet.pdf#page=2" target="_blank">נוסחאות הדינמיקה בדף הנוסחאות</a></div>
     </div>
-    <table class="bank">
-      <tr><th>שנה</th><th>ש'</th><th>תיאור</th></tr>
-      <tr><td>2021</td><td>2</td><td>מערכת גלגלת A,B לתקרה — תרשימי כוחות, מתיחויות, תאוצה</td></tr>
-      <tr><td>2022</td><td>2</td><td>תיבה עם משקל תלוי ואז מישור משופע — יחס מתיחויות, זווית</td></tr>
-      <tr><td>2023</td><td>2</td><td>A,B קשורים, A נמשך בכוח F₁ — גרף מתיחות-זמן</td></tr>
-      <tr><td>2024</td><td>2</td><td>תיבה נמשכת מעל גלגלת — מסה וחיכוך מגרף a מול F</td></tr>
-      <tr><td>2025</td><td>2</td><td>גוף על מישור בזווית משתנה עם חיכוך — זווית סף, מהירות</td></tr>
-    </table>
-    <div class="soon">פתרונות מלאים בבנייה — אחרי אישור הפורמט.</div>
+    <!-- Dynamics 2024-Q2 -->
+    <div class="prob">
+      <span class="tag">קיץ תשפ"ד 2024 · שאלה 2</span>
+      <h4>תיבה נמשכת דרך גלגלת — מציאת מסה ומקדם חיכוך מגרף</h4>
+      <p>תיבה שמסתה <span class="formula">m</span> מונחת על משטח אופקי <b>מחוספס</b>, וקשורה בחוט העובר על גלגלת בקצה השולחן. בקצה החוט מושכים כלפי מטה בכוח <span class="formula">F</span>, ומודדים את התאוצה <span class="formula">a</span> של התיבה. מקדם החיכוך (סטטי וקינטי) בין התיבה למשטח הוא <span class="formula">μ</span>. (מסת החוט והגלגלת זניחות; <span class="formula">g=10 m/s²</span>.)</p>
+
+      <div class="fig">
+        <svg width="200" height="150" viewBox="0 0 200 150" role="img" aria-label="מערך התיבה והגלגלת">
+          <defs><marker id="ah24" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#333"/></marker></defs>
+          <line x1="10" y1="80" x2="150" y2="80" stroke="#555" stroke-width="2"/>
+          <text x="20" y="95" font-size="10" fill="#777">משטח מחוספס</text>
+          <rect x="35" y="62" width="34" height="18" fill="#fff3cd" stroke="#b8860b"/><text x="48" y="75" font-size="12" font-weight="700">m</text>
+          <line x1="69" y1="71" x2="150" y2="71" stroke="#333"/>
+          <circle cx="152" cy="76" r="6" fill="none" stroke="#555" stroke-width="2"/>
+          <line x1="158" y1="76" x2="158" y2="120" stroke="#333"/>
+          <line x1="158" y1="105" x2="158" y2="135" stroke="#c0392b" stroke-width="2" marker-end="url(#ah24)"/>
+          <text x="163" y="125" font-size="12" fill="#c0392b" font-weight="700">F</text>
+        </svg>
+        <svg width="370" height="290" viewBox="0 0 370 290" role="img" aria-label="גרף תאוצה מול כוח">
+          <line x1="50" y1="15" x2="50" y2="278" stroke="#333" stroke-width="1.5"/>
+          <line x1="44" y1="159" x2="355" y2="159" stroke="#333" stroke-width="1.5"/>
+          <g font-size="10" fill="#555" text-anchor="end">
+            <text x="46" y="24">5</text><text x="46" y="79">3</text><text x="46" y="135">1</text>
+            <text x="42" y="218">-2</text><text x="42" y="257">-3.4</text>
+          </g>
+          <g font-size="10" fill="#555" text-anchor="middle">
+            <text x="100" y="173">1</text><text x="150" y="173">2</text><text x="200" y="173">3</text><text x="250" y="173">4</text><text x="300" y="173">5</text>
+          </g>
+          <text x="10" y="13" font-size="11" fill="#333">a (m/s²)</text>
+          <text x="356" y="155" font-size="11" fill="#333">F (N)</text>
+          <!-- trend line (0,-3.4)->(5.5,5) : (50,253)->(325,20) -->
+          <line x1="50" y1="253" x2="328" y2="18" stroke="#1565c0" stroke-width="2"/>
+          <!-- data points -->
+          <g fill="#c0392b">
+            <circle cx="225" cy="106" r="3.5"/><circle cx="250" cy="84" r="3.5"/><circle cx="275" cy="64" r="3.5"/><circle cx="300" cy="42" r="3.5"/><circle cx="325" cy="20" r="3.5"/>
+          </g>
+          <text x="150" y="200" font-size="10" fill="#777">חיתוך ציר F ב-≈2.2</text>
+        </svg>
+        <figcaption>שמאל: המערך. ימין: נקודות המדידה (a מול F) וקו המגמה. שיפוע = 1/m, חיתוך ציר a = −μg.</figcaption>
+      </div>
+
+      <p style="font-size:.96rem">
+      <b>א.</b> שרטטו את תרשים הכוחות על התיבה (שם הכוח + מי מפעיל). (6 נק')<br>
+      <b>ב.</b> בלי המדידות — פתחו ביטוי ל-<span class="formula">a</span> כפונקציה של <span class="formula">F</span> (בעזרת <span class="formula">g, μ, m</span>). (8 נק')<br>
+      <b>ג.</b> שרטטו את נקודות המדידה וקו מגמה. (8 נק')<br>
+      <b>ד.</b> מהגרף: (1) חשבו את מסת התיבה <span class="formula">m</span>; (2) את מקדם החיכוך <span class="formula">μ</span>. (7 נק')<br>
+      <b>ה.</b> במדידה נוספת מושכים בכוח <span class="formula">F=1.5 N</span>. מה התאוצה? הסבירו. (4⅓ נק')
+      </p>
+
+      <details class="lvl hint"><summary>💡 רמז</summary>
+        על התיבה: מתיחות, חיכוך, משקל, נורמל. הקשר יוצא ישר: <span class="formula">a = F/m − μg</span> — צורת <span class="formula">y=שיפוע·x+חיתוך</span>. בסעיף ה': האם הכוח בכלל מספיק כדי להזיז?
+      </details>
+      <details class="lvl method"><summary>🧭 שיטה</summary>
+        <div class="step"><b>ב:</b> ציר אנכי → <span class="formula">N=mg</span>; ציר אופקי → <span class="formula">F−μmg=ma</span> → מבודדים <span class="formula">a</span>.</div>
+        <div class="step"><b>ד:</b> השוואה ל-<span class="formula">a=(1/m)F−μg</span>: <b>שיפוע=1/m</b>, <b>חיתוך ציר a = −μg</b>.</div>
+        <div class="step"><b>ה:</b> בדקו את החיכוך הסטטי המרבי <span class="formula">μmg</span> — אם F קטן ממנו, אין תנועה.</div>
+      </details>
+      <details class="lvl full"><summary>✅ פתרון מלא</summary>
+        <div class="step"><b>א.</b> ארבעה כוחות: <b>מתיחות T</b> (החוט, ימינה), <b>חיכוך f_k</b> (המשטח, שמאלה), <b>משקל mg</b> (כדה"א, מטה), <b>נורמל N</b> (המשטח, מעלה).</div>
+        <div class="step"><b>ב.</b> אנכי: <span class="formula">N=mg</span>. אופקי: <span class="formula">T−f_k=ma</span>, כאשר <span class="formula">T=F</span> ו-<span class="formula">f_k=μN=μmg</span>.
+          <div class="ans">a = F/m − μg</div></div>
+        <div class="step"><b>ד.</b> שיפוע קו המגמה (למשל מ-(0,−3.4) ל-(5.25,4.6)): <span class="formula">≈1.52</span> = 1/m → <span class="formula">m≈0.66 kg</span>. חיתוך ציר a = <span class="formula">−μg=−3.4</span> → <span class="formula">μ=3.4/10=0.34</span>.
+          <div class="ans">m ≈ 0.66 ק"ג · μ = 0.34</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> כשמפתחים קשר ליניארי <span class="formula">a = (1/m)·F + (−μg)</span> — זו ממש משוואת ישר <span class="formula">y=Ax+B</span>.</div>
+            <div>📈 לכן <b>השיפוע A = 1/m</b> (ולכן <span class="formula">m=1/A</span>), וה<b>חיתוך עם ציר a הוא B = −μg</b> (ולכן <span class="formula">μ=−B/g</span>).</div>
+            <div>📐 <b>שיפוע מחושבים משתי נקודות על קו המגמה</b> — לא מנקודות הטבלה.</div>
+            <div class="warn">⚠️ <b>הבוחנים מציינים:</b> טעות נפוצה לחשב שיפוע מנקודה אחת או מנקודות שאינן על קו המגמה, ולשכוח שהקו אינו עובר דרך הראשית.</div>
+          </div></details>
+        </div>
+        <div class="step"><b>ה.</b> החיכוך הסטטי המרבי: <span class="formula">f_s,max=μmg=0.34·0.66·10≈2.2 N</span>. הכוח <span class="formula">F=1.5 N</span> קטן ממנו → התיבה <b>אינה זזה</b>.
+          <div class="ans">a = 0 (התיבה במנוחה — F קטן מהחיכוך הסטטי המרבי).</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> הביטוי <span class="formula">a=F/m−μg</span> תקף רק כשהגוף <b>כבר נע</b> (חיכוך קינטי). אם עדיין במנוחה — בודקים קודם אם הכוח גובר על החיכוך הסטטי.</div>
+            <div class="warn">⚠️ <b>הבוחנים מציינים:</b> רבים הציבו עיוורת בנוסחה וקיבלו תאוצה שלילית — במקום להבין שהמצב סטטי ו-a=0.</div>
+          </div></details>
+        </div>
+      </details>
+    </div>
+
+    <!-- Dynamics 2025-Q2 -->
+    <div class="prob">
+      <span class="tag">קיץ תשפ"ה 2025 · שאלה 2</span>
+      <h4>גוף על מישור בזווית משתנה עם חיכוך — זווית סף</h4>
+      <p>גוף שמסתו <span class="formula">m</span> מונח על מישור משופע שזוויתו <span class="formula">α</span> ניתנת לשינוי. מקדם החיכוך הסטטי הוא <span class="formula">μₛ</span> והקינטי <span class="formula">μₖ=0.24</span>. בוחנים את הכוחות, את זווית הסף שבה הגוף מתחיל להחליק, ואת מהירותו בתחתית. (<span class="formula">g=10 m/s²</span>.)</p>
+
+      <div class="fig">
+        <svg width="240" height="160" viewBox="0 0 240 160" role="img" aria-label="גוף על מישור משופע">
+          <defs><marker id="ah25" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#333"/></marker></defs>
+          <polygon points="20,135 215,135 215,40" fill="#eef2f7" stroke="#888"/>
+          <line x1="20" y1="135" x2="215" y2="40" stroke="#555" stroke-width="2"/>
+          <!-- block on incline around midpoint (117,87) -->
+          <g transform="translate(117,82) rotate(-26)">
+            <rect x="-13" y="-12" width="26" height="20" fill="#fff3cd" stroke="#b8860b"/><text x="-4" y="3" font-size="11" font-weight="700">m</text>
+          </g>
+          <text x="35" y="129" font-size="11" fill="#555">α</text>
+          <line x1="55" y1="135" x2="78" y2="135" stroke="none"/>
+          <path d="M40,135 A22,22 0 0,0 52,123" fill="none" stroke="#555"/>
+          <line x1="117" y1="82" x2="150" y2="68" stroke="#777" stroke-dasharray="3,3"/>
+          <text x="150" y="105" font-size="10" fill="#777">h</text>
+          <line x1="143" y1="60" x2="143" y2="120" stroke="#777" stroke-dasharray="3,3"/>
+        </svg>
+        <figcaption>גוף על מישור משופע בזווית α (הזווית ניתנת לשינוי). h = הגובה ההתחלתי.</figcaption>
+      </div>
+
+      <p style="font-size:.96rem">
+      <b>א.</b> שרטטו את תרשים הכוחות על הגוף (כולל מערכת צירים). (6 נק')<br>
+      <b>ב.</b> מקטינים את הזווית והגוף נשאר במנוחה — האם כוח החיכוך גדל/קטן/לא משתנה? נמקו. (7 נק')<br>
+      <b>ג.</b> בזווית הסף <span class="formula">α₂</span>: (1) רשמו את שתי משוואות הכוחות; (2) בטאו את <span class="formula">α₂</span>. (8 נק')<br>
+      <b>ד.</b> בזווית <span class="formula">α₃=22°</span> הגוף נע במורד מגובה <span class="formula">h=0.3 m</span>. חשבו את מהירותו בתחתית. (8 נק')<br>
+      <b>ה.</b> נותנים לגוף מהירות כלפי מעלה. איזה תרשים (1/2/3) מתאר נכון את היחס בין תאוצת העלייה <span class="formula">aᵤ</span> לתאוצת הירידה <span class="formula">a_d</span>? (5⅓ נק')
+      </p>
+
+      <details class="lvl hint"><summary>💡 רמז</summary>
+        במנוחה החיכוך הוא "כוח מסתגל" ששווה בדיוק לרכיב המשקל לאורך המישור (<span class="formula">mg·sinα</span>). בזווית הסף בלבד החיכוך מקסימלי. בעלייה החיכוך כלפי מטה, בירידה כלפי מעלה.
+      </details>
+      <details class="lvl method"><summary>🧭 שיטה</summary>
+        <div class="step"><b>ב:</b> במנוחה <span class="formula">f_s=mg·sinα</span>. זווית קטֵנה → sin קטֵן → החיכוך קטֵן.</div>
+        <div class="step"><b>ג:</b> בסף: <span class="formula">f_s,max=μₛN</span> ו-<span class="formula">N=mg·cosα</span> ו-<span class="formula">f_s,max=mg·sinα₂</span> → חלוקה נותנת <span class="formula">tanα₂=μₛ</span>.</div>
+        <div class="step"><b>ד:</b> במורד עם חיכוך קינטי: <span class="formula">a=g(sinα−μₖcosα)</span>; אורך המדרון <span class="formula">x=h/sinα</span>; ואז <span class="formula">v²=2aΔx</span>.</div>
+      </details>
+      <details class="lvl full"><summary>✅ פתרון מלא</summary>
+        <div class="step"><b>א.</b> שלושה כוחות: <b>N</b> (נורמל, מאונך למשטח), <b>f_s</b> (חיכוך, לאורך המשטח), <b>mg</b> (משקל, אנכי מטה). חשוב לסמן מערכת צירים (לאורך ובניצב למישור).</div>
+        <div class="step"><b>ב.</b> במנוחה לאורך המישור: <span class="formula">f_s=mg·sinα</span>. כשמקטינים את הזווית, <span class="formula">sinα</span> קטֵן והגוף עדיין במנוחה →
+          <div class="ans">כוח החיכוך קטֵן.</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>הרעיון:</b> חיכוך סטטי הוא <b>כוח מסתגל</b>: הוא לוקח בדיוק את הערך הדרוש לשמירת שיווי משקל, עד למקסימום <span class="formula">μₛN</span>.</div>
+            <div class="warn">⚠️ <b>הבוחנים מציינים:</b> טעות נפוצה — להשתמש ב-<span class="formula">f=μN</span> ולומר שהחיכוך גדל (כי N גדל). הקשר <span class="formula">f=μN</span> תקף רק בסף; כל עוד יש מנוחה, <span class="formula">f_s=mg·sinα</span>.</div>
+          </div></details>
+        </div>
+        <div class="step"><b>ג.</b> בסף: <span class="formula">mg·sinα₂=μₛN</span> ו-<span class="formula">N=mg·cosα₂</span>. חלוקה: <span class="formula">tanα₂=μₛ</span>.
+          <div class="ans">α₂ = tan⁻¹(μₛ)</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>זווית סף:</b> זו הזווית שבה הגוף "עומד להחליק". מחלקים את שתי משוואות הכוחות זו בזו, ה-<span class="formula">mg</span> וה-<span class="formula">N</span> מצטמצמים, ונשאר <span class="formula">tanα₂=μₛ</span> — תוצאה יפה שתלויה רק במקדם החיכוך.</div>
+          </div></details>
+        </div>
+        <div class="step"><b>ד.</b> במורד: <span class="formula">a=g(sin22°−0.24·cos22°)≈1.52 m/s²</span>. אורך המדרון: <span class="formula">x=h/sin22°=0.3/0.375≈0.8 m</span>. ואז <span class="formula">v=√(2·1.52·0.8)≈1.56 m/s</span>.
+          <div class="ans">v ≈ 1.56 m/s</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>תאוצה במורד עם חיכוך:</b> רכיב המשקל לאורך המישור <span class="formula">mg·sinα</span> מאיץ למטה; החיכוך הקינטי <span class="formula">μₖmg·cosα</span> בולם. נטו: <span class="formula">a=g(sinα−μₖcosα)</span> (ה-m מצטמצם).</div>
+          </div></details>
+        </div>
+        <div class="step"><b>ה.</b> בעלייה החיכוך כלפי מטה → <span class="formula">aᵤ=g·sinα+f_k/m</span>. בירידה החיכוך כלפי מעלה → <span class="formula">a_d=g·sinα−f_k/m</span>. לכן <span class="formula">aᵤ&gt;a_d</span>.
+          <div class="ans">התרשים שבו תאוצת העלייה גדולה מתאוצת הירידה (תרשים 3).</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div class="warn">⚠️ <b>הבוחנים מציינים:</b> רבים בחרו "תאוצות שוות" — הכללת יתר. כיוון החיכוך מתהפך עם כיוון התנועה, ולכן גודל התאוצה בעלייה ובירידה שונה.</div>
+          </div></details>
+        </div>
+      </details>
+    </div>
+
+    <!-- Dynamics 2023-Q2 -->
+    <div class="prob">
+      <span class="tag">קיץ תשפ"ג 2023 · שאלה 2</span>
+      <h4>שני גופים תלויים, קשורים בחוט — גרף מתיחות-זמן</h4>
+      <p>שני גופים, <span class="formula">A</span> (עליון) ו-<span class="formula">B</span> (תחתון), קשורים בחוט אנכי שעליו חיישן מתיחות. כוח חיצוני <span class="formula">F₁</span> מושך את <span class="formula">A</span> כלפי מעלה. נתון גרף של המתיחות בחוט כפונקציה של הזמן, והמערכת בתחילה במנוחה. (<span class="formula">g=10 m/s²</span>.)</p>
+
+      <div class="fig">
+        <svg width="150" height="200" viewBox="0 0 150 200" role="img" aria-label="שני גופים תלויים">
+          <defs><marker id="ah23" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#333"/></marker></defs>
+          <line x1="75" y1="50" x2="75" y2="15" stroke="#c0392b" stroke-width="2" marker-end="url(#ah23)"/><text x="80" y="25" font-size="12" fill="#c0392b" font-weight="700">F₁</text>
+          <rect x="55" y="50" width="40" height="30" fill="#fff3cd" stroke="#b8860b"/><text x="71" y="70" font-size="13" font-weight="700">A</text>
+          <line x1="75" y1="80" x2="75" y2="125" stroke="#333"/>
+          <circle cx="75" cy="102" r="4" fill="#1565c0"/><text x="82" y="106" font-size="9" fill="#1565c0">חיישן</text>
+          <rect x="55" y="125" width="40" height="30" fill="#fff3cd" stroke="#b8860b"/><text x="71" y="145" font-size="13" font-weight="700">B</text>
+        </svg>
+        <svg width="340" height="200" viewBox="0 0 340 200" role="img" aria-label="גרף מתיחות-זמן">
+          <line x1="45" y1="15" x2="45" y2="170" stroke="#333" stroke-width="1.5"/>
+          <line x1="45" y1="170" x2="320" y2="170" stroke="#333" stroke-width="1.5"/>
+          <g font-size="10" fill="#555" text-anchor="end">
+            <text x="42" y="135">10</text><text x="42" y="103">12</text>
+            <line x1="42" y1="132" x2="45" y2="132" stroke="#333"/><line x1="42" y1="100" x2="45" y2="100" stroke="#333"/>
+          </g>
+          <g font-size="10" fill="#555" text-anchor="middle">
+            <text x="113" y="183">0.3</text><text x="225" y="183">0.8</text><text x="290" y="183">1.2</text>
+          </g>
+          <text x="8" y="13" font-size="11" fill="#333">T (N)</text>
+          <text x="322" y="166" font-size="11" fill="#333">t (s)</text>
+          <!-- step: 10 (0-0.3), 12 (0.3-0.8), 10 (0.8-1.2). x=45+t*225/1.2=45+t*187.5 -->
+          <polyline points="45,132 101,132 101,100 195,100 195,132 270,132" fill="none" stroke="#1565c0" stroke-width="2"/>
+        </svg>
+        <figcaption>שמאל: A תלוי מעל B, חיישן על החוט, F₁ כלפי מעלה. ימין: המתיחות בחוט (פונקציית מדרגה: 10→12→10 N).</figcaption>
+      </div>
+
+      <p style="font-size:.96rem">
+      <b>א.</b> שרטטו תרשים כוחות לכל אחד מ-<span class="formula">A</span> ו-<span class="formula">B</span> (שם + מי מפעיל). (4 נק')<br>
+      <b>ב.</b> רשמו משוואת כוחות לכל גוף, ופתחו ביטוי לתאוצת המערכת. (6 נק')<br>
+      <b>ג.</b> עד <span class="formula">t=0.3s</span> המערכת במנוחה ו-<span class="formula">m_A=3 kg</span>. חשבו את <span class="formula">m_B</span>. (5 נק')<br>
+      <b>ד.</b> חשבו את <span class="formula">F₁</span> בכל אחד משלושת פרקי הזמן. (8 נק')<br>
+      <b>ה.</b> קבעו את סוג התנועה ב-<span class="formula">0.3&lt;t&lt;0.8</span> וב-<span class="formula">0.8&lt;t&lt;1.2</span>. הסבירו. (6 נק')<br>
+      <b>ו.</b> מחליפים את <span class="formula">B</span> בכוח <span class="formula">F₂</span> כלפי מטה (אותה תאוצה). מה היחס בין <span class="formula">F₂</span> ל-<span class="formula">m_Bg</span>? (4⅓ נק')
+      </p>
+
+      <details class="lvl hint"><summary>💡 רמז</summary>
+        לכל גוף תרשים נפרד; המתיחות על A כלפי מטה ועל B כלפי מעלה (חוק שלישי). מנתחים את <b>המערכת</b> לתאוצה, ואת גוף <b>B</b> לבד לקריאת המתיחות. מנוחה → שקול אפס.
+      </details>
+      <details class="lvl method"><summary>🧭 שיטה</summary>
+        <div class="step"><b>ב:</b> A: <span class="formula">F₁−T−m_Ag=m_Aa</span>; B: <span class="formula">T−m_Bg=m_Ba</span>. חיבור → <span class="formula">a=F₁/(m_A+m_B)−g</span>.</div>
+        <div class="step"><b>ג:</b> מנוחה → a=0; מהגרף T=10 → גוף B: <span class="formula">T=m_Bg</span> → <span class="formula">m_B=1 kg</span>.</div>
+        <div class="step"><b>ד:</b> בכל פרק קוראים T, מוצאים a דרך B (<span class="formula">a=T/m_B−g</span>), ואז F₁ דרך A.</div>
+      </details>
+      <details class="lvl full"><summary>✅ פתרון מלא</summary>
+        <div class="step"><b>א.</b> על <b>A</b>: F₁ (חיצוני, מעלה), m_Ag (כדה"א, מטה), T (החוט, מטה). על <b>B</b>: T (החוט, מעלה), m_Bg (כדה"א, מטה).</div>
+        <div class="step"><b>ב.</b> חיבור שתי המשוואות מבטל את T:
+          <div class="ans">a = F₁/(m_A+m_B) − g</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>גופים קשורים:</b> מנתחים את <b>כל המערכת יחד</b> כדי למצוא תאוצה (המתיחות הפנימית מצטמצמת בחיבור), ואז גוף <b>בודד</b> כדי למצוא את המתיחות.</div>
+            <div>🔗 חוט בלתי-מתיח → שני הגופים נעים באותה תאוצה <span class="formula">a</span>.</div>
+          </div></details>
+        </div>
+        <div class="step"><b>ג.</b> במנוחה (a=0) ו-T=10 מהגרף; גוף B: <span class="formula">T−m_Bg=0</span> → <span class="formula">m_B=10/10=1 kg</span>.<div class="ans">m_B = 1 ק"ג</div></div>
+        <div class="step"><b>ד.</b> בכל פרק: a דרך B (<span class="formula">a=T/m_B−g</span>), ואז <span class="formula">F₁=T+m_A(g+a)</span>:
+          <br>0–0.3s: T=10, a=0 → <span class="formula">F₁=10+3·10=40 N</span>.
+          <br>0.3–0.8s: T=12, a=2 → <span class="formula">F₁=12+3·12=48 N</span>.
+          <br>0.8–1.2s: T=10, a=0 → <span class="formula">F₁=40 N</span>.
+          <div class="ans">F₁ = 40 N · 48 N · 40 N</div></div>
+        <div class="step"><b>ה.</b> 0.3–0.8s: שקול קבוע ≠ 0 → <b>תנועה בתאוצה</b> (a=2). 0.8–1.2s: שקול = 0 → אבל כבר נצברה מהירות → <b>תנועה במהירות קבועה</b> (לא מנוחה!).
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div class="warn">⚠️ שקול אפס <b>אינו</b> אומר מנוחה — אם הגוף כבר נע, הוא ממשיך במהירות קבועה (חוק ההתמדה). זו טעות קלאסית.</div>
+          </div></details>
+        </div>
+        <div class="step"><b>ו.</b> החלפת B בכוח F₂ עם אותה תאוצה → <span class="formula">F₂=T</span>. ומכיוון שהמערכת מאיצה כלפי מעלה, <span class="formula">T&gt;m_Bg</span>.
+          <div class="ans">F₂ &gt; m_Bg.</div></div>
+      </details>
+    </div>
+
+    <!-- Dynamics 2021-Q2 -->
+    <div class="prob">
+      <span class="tag">קיץ תשפ"א 2021 · שאלה 2</span>
+      <h4>גלגלת תלויה מהתקרה — שני גופים (מכונת אטווד)</h4>
+      <p>שני גופים <span class="formula">A</span> ו-<span class="formula">B</span> מחוברים בחוט <span class="formula">S₁</span> העובר על גלגלת, והגלגלת תלויה מהתקרה בחוט <span class="formula">S₂</span>. בתחילה <span class="formula">A</span> מוחזק והמערכת במנוחה. נתון <span class="formula">m_A&gt;m_B</span>. (מזניחים מסות חוטים/גלגלת וחיכוך; <span class="formula">g=10 m/s²</span>.)</p>
+
+      <div class="fig">
+        <svg width="220" height="200" viewBox="0 0 220 200" role="img" aria-label="גלגלת תלויה מהתקרה">
+          <line x1="40" y1="20" x2="180" y2="20" stroke="#555" stroke-width="3"/>
+          <g stroke="#999"><line x1="48" y1="20" x2="40" y2="12"/><line x1="68" y1="20" x2="60" y2="12"/><line x1="88" y1="20" x2="80" y2="12"/><line x1="108" y1="20" x2="100" y2="12"/><line x1="128" y1="20" x2="120" y2="12"/><line x1="148" y1="20" x2="140" y2="12"/><line x1="168" y1="20" x2="160" y2="12"/></g>
+          <line x1="110" y1="20" x2="110" y2="42" stroke="#333"/><text x="114" y="36" font-size="10" fill="#555">S₂</text>
+          <circle cx="110" cy="52" r="10" fill="none" stroke="#555" stroke-width="2"/>
+          <line x1="100" y1="52" x2="100" y2="150" stroke="#333"/>
+          <line x1="120" y1="52" x2="120" y2="110" stroke="#333"/>
+          <text x="86" y="100" font-size="10" fill="#555">S₁</text>
+          <rect x="84" y="150" width="32" height="24" fill="#fff3cd" stroke="#b8860b"/><text x="96" y="167" font-size="12" font-weight="700">B</text>
+          <line x1="60" y1="178" x2="160" y2="178" stroke="#555" stroke-width="2"/>
+          <rect x="104" y="110" width="32" height="24" fill="#ffe0b2" stroke="#b8860b"/><text x="116" y="127" font-size="12" font-weight="700">A</text>
+        </svg>
+        <figcaption>הגלגלת תלויה מהתקרה בחוט S₂; החוט S₁ עובר מעליה ומחבר את A (כבד, מימין) ו-B (קל, על הרצפה). לאחר השחרור A יורד ו-B עולה.</figcaption>
+      </div>
+
+      <p style="font-size:.96rem">
+      <b>א.</b> שרטטו תרשים כוחות על <span class="formula">B</span>. (5 נק')<br>
+      <b>ב.</b> שרטטו תרשים כוחות על הגלגלת. (5 נק')<br>
+      <b>ג.</b> השוו בין A ל-B: (1) גודל התאוצה; (2) הכוח השקול; (3) המתיחות. נמקו. (9 נק')<br>
+      <b>ד.</b> בטאו את תאוצת המערכת בעזרת <span class="formula">m_A, m_B, g</span>. (5 נק')<br>
+      <b>ה.</b> חשבו את התאוצה (<span class="formula">m_A=3, m_B=2 kg</span>). (5 נק')<br>
+      <b>ו.</b> חשבו את המתיחות בחוט <span class="formula">S₂</span> לאחר השחרור. (4⅓ נק')
+      </p>
+
+      <details class="lvl hint"><summary>💡 רמז</summary>
+        אותו חוט S₁ → אותה מתיחות T ואותו גודל תאוצה לשני הגופים. גלגלת חסרת מסה → <span class="formula">S₂</span> נושא את <b>שתי</b> המתיחויות: <span class="formula">T₂=2T</span>.
+      </details>
+      <details class="lvl method"><summary>🧭 שיטה</summary>
+        <div class="step"><b>ג:</b> אותו חוט → תאוצה ומתיחות שוות; <span class="formula">ΣF=ma</span> עם אותה a ו-<span class="formula">m_A&gt;m_B</span> → השקול על A גדול יותר.</div>
+        <div class="step"><b>ד:</b> B: <span class="formula">T−m_Bg=m_Ba</span>; A: <span class="formula">m_Ag−T=m_Aa</span>. חיבור → <span class="formula">a=g(m_A−m_B)/(m_A+m_B)</span>.</div>
+        <div class="step"><b>ו:</b> <span class="formula">T=m_B(a+g)</span>, ואז <span class="formula">T₂=2T</span>.</div>
+      </details>
+      <details class="lvl full"><summary>✅ פתרון מלא</summary>
+        <div class="step"><b>א.</b> על B: <b>מתיחות T</b> (החוט, מעלה), <b>משקל m_Bg</b> (כדה"א, מטה). (בתחילה הנורמל מהרצפה = 0 — נתון.)</div>
+        <div class="step"><b>ב.</b> על הגלגלת: <b>T₂</b> (S₂, מעלה) ושתי מתיחויות <b>T</b> (S₁, מטה). גלגלת חסרת מסה → <span class="formula">T₂=2T</span>.</div>
+        <div class="step"><b>ג.</b> (1) <b>שווה</b> — אותו חוט. (2) <b>על A גדול</b> — <span class="formula">ΣF=ma</span>, אותה a ו-<span class="formula">m_A&gt;m_B</span>. (3) <b>שווה</b> — אותו חוט, אותה מתיחות.
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>מכונת אטווד:</b> חוט יחיד על גלגלת → המתיחות זהה בשני הצדדים, ושני הגופים נעים באותו גודל תאוצה (אחד עולה, השני יורד).</div>
+          </div></details>
+        </div>
+        <div class="step"><b>ד.</b> חיבור שתי המשוואות מבטל את T:
+          <div class="ans">a = g·(m_A − m_B)/(m_A + m_B)</div></div>
+        <div class="step"><b>ה.</b> <span class="formula">a=10·(3−2)/(3+2)=2 m/s²</span> (A יורד, B עולה).<div class="ans">a = 2 m/s²</div></div>
+        <div class="step"><b>ו.</b> <span class="formula">T=m_B(a+g)=2·(2+10)=24 N</span>; <span class="formula">T₂=2T=48 N</span>.
+          <div class="ans">T₂ = 48 N</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div class="warn">⚠️ <b>טעות נפוצה:</b> לחשב <span class="formula">T₂=2m_Bg=40 N</span> (מצב מנוחה). אחרי השחרור המערכת מאיצה, ולכן <span class="formula">T=m_B(a+g)</span> ו-<span class="formula">T₂=48 N</span>.</div>
+          </div></details>
+        </div>
+      </details>
+    </div>
+
+    <!-- Dynamics 2022-Q2 -->
+    <div class="prob">
+      <span class="tag">קיץ תשפ"ב 2022 · שאלה 2</span>
+      <h4>תיבה עם משקולת תלויה, ואז מישור משופע חלק</h4>
+      <p>תיבה שמסתה <span class="formula">M</span> על מסילה חלקה. <b>ניסוי 1:</b> המסילה אופקית; חוט מהתיבה עובר על גלגלת ובקצהו משקולת תלויה <span class="formula">m₁</span>; משחררים והתיבה מואצת בקצב <span class="formula">g/4</span>. <b>ניסוי 2:</b> אותה מסילה מוטה בזווית <span class="formula">α</span> (ללא משקולת), וגודל התאוצה שוב <span class="formula">g/4</span>. (המסילה חלקה; מסות החוט/גלגלת זניחות.)</p>
+
+      <div class="fig">
+        <svg width="200" height="150" viewBox="0 0 200 150" role="img" aria-label="ניסוי 1 — תיבה אופקית ומשקולת תלויה">
+          <defs><marker id="ah22" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#333"/></marker></defs>
+          <line x1="10" y1="60" x2="150" y2="60" stroke="#555" stroke-width="2"/>
+          <rect x="35" y="42" width="34" height="18" fill="#fff3cd" stroke="#b8860b"/><text x="48" y="55" font-size="12" font-weight="700">M</text>
+          <line x1="69" y1="51" x2="150" y2="51" stroke="#333"/>
+          <circle cx="152" cy="56" r="6" fill="none" stroke="#555" stroke-width="2"/>
+          <line x1="158" y1="56" x2="158" y2="100" stroke="#333"/>
+          <rect x="149" y="100" width="18" height="22" fill="#ffe0b2" stroke="#b8860b"/><text x="153" y="115" font-size="10" font-weight="700">m₁</text>
+        </svg>
+        <svg width="200" height="150" viewBox="0 0 200 150" role="img" aria-label="ניסוי 2 — מישור משופע">
+          <polygon points="20,125 185,125 185,45" fill="#eef2f7" stroke="#888"/>
+          <line x1="20" y1="125" x2="185" y2="45" stroke="#555" stroke-width="2"/>
+          <g transform="translate(95,80) rotate(-26)"><rect x="-15" y="-11" width="30" height="18" fill="#fff3cd" stroke="#b8860b"/><text x="-6" y="3" font-size="11" font-weight="700">M</text></g>
+          <path d="M40,125 A20,20 0 0,0 51,114" fill="none" stroke="#555"/><text x="34" y="120" font-size="11" fill="#555">α</text>
+        </svg>
+        <figcaption>ניסוי 1 (שמאל): תיבה M אופקית, משקולת m₁ תלויה דרך גלגלת. ניסוי 2 (ימין): אותה תיבה על מישור חלק בזווית α. בשניהם התאוצה g/4.</figcaption>
+      </div>
+
+      <p style="font-size:.96rem">
+      <b>א.</b> שרטטו תרשים כוחות על <span class="formula">M</span> ועל <span class="formula">m₁</span> (ניסוי 1). (5 נק')<br>
+      <b>ב.</b> בטאו את <span class="formula">m₁</span> באמצעות <span class="formula">M</span>. (6 נק')<br>
+      <b>ג.</b> חשבו את היחס בין המתיחות במנוחה למתיחות בתנועה. (7 נק')<br>
+      <b>ד.</b> חשבו את זווית המישור <span class="formula">α</span> (ניסוי 2). (7 נק')<br>
+      <b>ה.</b> בעלייה התיבה נעצרת רגעית. האם תאוצתה אז אפס? נמקו. (5 נק')
+      </p>
+
+      <details class="lvl hint"><summary>💡 רמז</summary>
+        אותו חוט → אותה מתיחות ואותה תאוצה ל-M ול-m₁. במישור חלק התאוצה לאורך המישור היא <span class="formula">g·sinα</span> בלבד. מהירות אפס אינה אומרת תאוצה אפס.
+      </details>
+      <details class="lvl method"><summary>🧭 שיטה</summary>
+        <div class="step"><b>ב:</b> M: <span class="formula">T=Ma</span>; m₁: <span class="formula">m₁g−T=m₁a</span>. הצבת <span class="formula">a=g/4</span> → <span class="formula">m₁=M/3</span>.</div>
+        <div class="step"><b>ג:</b> מנוחה: <span class="formula">T=m₁g</span>; תנועה: <span class="formula">T=Ma=3m₁·g/4</span> → יחס 4/3.</div>
+        <div class="step"><b>ד:</b> מישור חלק: <span class="formula">g·sinα=g/4</span> → <span class="formula">sinα=0.25</span> → <span class="formula">α≈14.5°</span>.</div>
+      </details>
+      <details class="lvl full"><summary>✅ פתרון מלא</summary>
+        <div class="step"><b>א.</b> על M: משקל Mg (מטה), נורמל N (מעלה), מתיחות T (אופקית לכיוון הגלגלת). על m₁: משקל m₁g (מטה), מתיחות T (מעלה).</div>
+        <div class="step"><b>ב.</b> <span class="formula">T=Ma</span> ו-<span class="formula">m₁g−T=m₁a</span> → <span class="formula">m₁=Ma/(g−a)</span>. הצבת <span class="formula">a=g/4</span>:
+          <div class="ans">m₁ = M/3</div></div>
+        <div class="step"><b>ג.</b> מנוחה: <span class="formula">T=m₁g</span>. תנועה: <span class="formula">T=Ma=3m₁·(g/4)=¾m₁g</span>.
+          <div class="ans">היחס מנוחה : תנועה = 4/3 ≈ 1.33</div></div>
+        <div class="step"><b>ד.</b> במישור חלק לאורך המישור: <span class="formula">g·sinα=g/4</span> → <span class="formula">sinα=0.25</span>.
+          <div class="ans">α ≈ 14.5°</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div>🧩 <b>על מישור חלק</b> הכוח היחיד לאורך המישור הוא רכיב המשקל, ולכן <span class="formula">a=g·sinα</span> — לא תלוי במסה.</div>
+          </div></details>
+        </div>
+        <div class="step"><b>ה.</b> במישור חלק רכיב המשקל <span class="formula">Mg·sinα</span> פועל כל הזמן → התאוצה <span class="formula">g·sinα=g/4</span> תמיד, גם ברגע ההיפוך.
+          <div class="ans">לא — התאוצה אינה אפס; גודלה g/4.</div>
+          <details class="substep"><summary><span></span></summary><div class="scaf">
+            <div class="warn">⚠️ <b>טעות קלאסית:</b> "המהירות אפס ⇐ התאוצה אפס". לא נכון! בנקודת ההיפוך הכוח (והתאוצה) ממשיכים לפעול — בדיוק כמו כדור שנזרק מעלה.</div>
+          </div></details>
+        </div>
+      </details>
+    </div>
   </section>
 
   <!-- ============ תנועה מעגלית ============ -->
